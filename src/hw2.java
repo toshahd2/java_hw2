@@ -7,7 +7,10 @@ public class hw2 {
         task1();
         //2. Напишите программу, чтобы проверить, являются ли две данные строки вращением друг друга.
         task2();
-
+        //4. Дано два числа, например 3 и 56, необходимо составить следующие строки: 3 + 56 = 59 3 – 56 = -53 3 * 56 = 168 Используем метод StringBuilder.append().
+        task4();
+        //5. Замените символ “=” на слово “равно”. Используйте методы StringBuilder.insert(),StringBuilder.deleteCharAt().
+        task5();
     }
     static void task1 () {
         System.out.println("Задача 1");
@@ -66,5 +69,30 @@ public class hw2 {
         String reverseString = new String(stringForward.reverse().toString());
         String result = new String(reverseString.equals(stringBackward) ? "является" : "не является");
         System.out.println("'" + stringForward.reverse() + "' " + result + " вращением '" + stringBackward + "'");
+    }
+
+    static void task4 () {
+        System.out.println("\nЗадача 4");
+        int a = 3, b = 56;
+        StringBuilder sumNumbers = new StringBuilder();
+        sumNumbers.append(a).append(" ").append("+").append(" ").append(b).append(" = ").append(a + b);
+        System.out.println(sumNumbers);
+        StringBuilder subNumbers = new StringBuilder();
+        subNumbers.append(a).append(" ").append("-").append(" ").append(b).append(" = ").append(a - b);
+        System.out.println(subNumbers);
+        StringBuilder multNumbers = new StringBuilder();
+        multNumbers.append(a).append(" ").append("*").append(" ").append(b).append(" = ").append(a * b);
+        System.out.println(multNumbers);
+    }
+    static void task5 () {
+        System.out.println("\nЗадача 5");
+        int a = 3, b = 56;
+        StringBuilder sumNumbers = new StringBuilder();
+        sumNumbers.append(a).append(" ").append("+").append(" ").append(b).append(" = ").append(a + b);
+        System.out.println(sumNumbers);
+        int index = sumNumbers.indexOf("=");
+        sumNumbers = sumNumbers.deleteCharAt(index).insert(index, "равно");
+        System.out.println(sumNumbers);
+
     }
 }
